@@ -276,9 +276,6 @@ header h1 {
 }
 
 
-#timer{ margin-top: -10px; margin-left: 5px; } 
-.fim{ font-size: 50px; background-color: gold; font-weight: bold; width: 75%; min-height: 650px; text-align: center; margin: auto; flex-direction: column; align-items: center; justify-content: center; border-radius: 10px;  display: none; }
-
 /* ================= RESPONSIVIDADE ================= */
 @media (max-width: 1080px) {
     header {
@@ -332,7 +329,7 @@ header h1 {
 
     .fim { 
         font-size: 30px; 
-        width: 85%; 
+        width: 90%; 
         min-height: 400px; 
     }
 
@@ -399,5 +396,4 @@ header h1 {
         border: solid 5px black;
         border-radius: 10px; 
     }
-
 }
