@@ -332,7 +332,7 @@ header h1 {
 
     .fim { 
         font-size: 30px; 
-        width: 70%; 
+        width: 85%; 
         min-height: 400px; 
     }
 
@@ -399,4 +399,5 @@ header h1 {
         border: solid 5px black;
         border-radius: 10px; 
     }
+
 }
