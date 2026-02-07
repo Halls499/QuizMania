@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMania</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/quiz.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>QuizMania</h1>
+    </header>
+
+    <div class="cbc">
+        <!-- Barra do progresso -->
+        <div class="barra-container">
+            <div class="barra"></div>
+        </div>
+
+        <!-- Progresso do jogador -->
+        <p id="progresso"></p>
+
+        <!-- Timer para resposta -->
+        <div id="timer">⏱️ 60s</div>
+    </div>
+
+
+    <!-- Pergunta -->
+    <div class="pergunta">
+        <h5 id="tit"></h5>
+        <p id="pergunta"></p>
+    </div>
+
+    <!-- Possiveis respostas -->
+    <div class="pai">
+        <button class="btn_resposta"></button>
+        <button class="btn_resposta"></button>
+        <button class="btn_resposta"></button>
+        <button class="btn_resposta"></button>
+    </div>
+
+    <!-- Botão para mostrar nova pergunta -->
+    <button onclick="Avancar()" class="prox" id="prox">Próxima pergunta</button>
+    <button class="prox1" id="comecar">Começar</button>
+
+    <!-- Mostrar pontuação do usuario -->
+    <div class="fim">
+        <p id="pontuacao" style="display:none"></p>
+            <div class="trofeu">
+                <img src="img/trofeu.png" alt="">
+            </div>
+            <div class="botoes">
+                <button id="recomecar">Jogar Novamente</button>
+                <a href="index.html"><button class="menu">Menu</button></a>
+            </div>
+    </div>
+
+    <script src="animais.js"></script>
+</body>
+</html>

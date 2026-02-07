@@ -1,0 +1,402 @@
+/* ================= RESET PADRÃO ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: gray;
+}
+
+/* ================= HEADER ================= */
+header {
+    background-color: black;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    color: red;
+    font-size: 50px;
+}
+
+/* ================= TÍTULOS ================= */
+.inicial {
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+/* ================= CONTAINER DOS CARDS ================= */
+.pae {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
+    gap: 30px;                                /* espaço entre os cards */
+    width: 100%;
+    margin: 0 auto 10px auto;
+    padding: 10px;
+    font-size: 30px;
+}
+
+/* Link que envolve o card */
+.pae a {
+    display: block;
+    text-decoration: none;
+}
+
+/* Cada card */
+.card {
+    background-color: white;
+    text-align: center;
+    width: 100%;
+    border: 5px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px gray;
+    transition: transform 0.2s;
+    height: 450px;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    z-index: 1;
+}
+
+.inicio {
+    width: 90%;
+    height: 375px;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.prim {
+    margin-bottom: 10px;
+}
+
+.menu{
+    margin-top: 15px; 
+    padding: 7px 15px; 
+    font-size: 30px; 
+    margin-bottom: 10px; 
+    border: solid 5px black;
+    border-radius: 10px;
+}
+
+.botoes {
+    display: flex;            /* Deixa os elementos filhos (botões) em linha */
+    justify-content: center;  /* Centraliza horizontalmente */
+    gap: 10px;                /* Espaço entre os botões */
+    margin-top: 20px;         /* Espaço acima da div */
+}
+
+.botoes button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+/* ================= SEÇÃO QUIZ ================= */
+.pergunta {
+    background-color: white;
+    color: black;
+    font-size: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 5px solid black;
+    box-shadow: 0 0 10px gray;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.pergunta.saindo { opacity: 0; transform: translateY(-20px); }
+.pergunta.entrando { opacity: 0; transform: translateY(20px); }
+
+.btn_resposta {
+    width: 95%;             /* largura menor que 100% */
+    margin: 10px auto;      /* 10px de cima/baixo e centralizado horizontalmente */
+    font-size: 20px;
+    padding: 15px;
+    cursor: pointer;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    transition: all 0.3s ease; 
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn_resposta.escolhida,
+.btn_resposta.clicado {
+    background-color: #ddd;
+    box-shadow: 0 0 15px gray;
+    border: none; /* do CSS antigo */
+}
+
+.btn_resposta.saindo { opacity: 0; transform: translateY(20px); }
+.btn_resposta.entrando { opacity: 0; transform: translateY(-20px); }
+
+.prox {
+    display: none;
+    margin: 20px auto;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.prox1 {
+    display: block;
+    margin: 20px auto;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.pai { display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;
+}
+
+.cbc{ 
+    width: 400px; 
+    font-size: 17px; 
+    margin: 15px 30px; 
+    background-color: white;
+    border: solid 5px black;
+    border-radius: 10px;
+    display: none;
+}
+
+#timer{ 
+    margin-top: 20px; 
+    margin-left: 15px; 
+    font-size: 30px;
+}
+
+#progresso { 
+        width: 300px; 
+        font-size: 30px;
+        margin-left: 10px;
+        margin-top: 3px; 
+        margin-bottom: 20px;
+    }
+
+/* ================= FINALIZAÇÃO E PROGRESSO ================= */
+.fim {
+    font-size: 50px;
+    background-color: gold;
+    font-weight: bold;
+    width: 80%;
+    min-height: 500px;
+    text-align: center;
+    margin: 40px auto;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 5px solid black;
+}
+
+#recomecar { 
+    margin-top: 15px; 
+    padding: 7px 15px; 
+    font-size: 30px; 
+    margin-bottom: 10px; 
+    border: solid 5px black;
+    border-radius: 10px;
+}
+
+.barra-container {
+    width: 90%;
+    max-width: 500px;
+    height: 25px;
+    background-color: #ddd;
+    border-radius: 15px;
+    margin: 30px auto;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.barra {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #81C784);
+    border-radius: 15px 0 0 15px;
+    transition: width 0.3s ease;
+}
+
+/* ================= TROFÉU E CONFETE ================= */
+.trofeu {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 30%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+.confete {
+    position: fixed;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation-name: cair;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    z-index: 9999;
+}
+
+@keyframes cair {
+    from { transform: translateY(0) rotate(0deg); }
+    to { transform: translateY(100vh) rotate(360deg); }
+}
+
+
+#timer{ margin-top: -10px; margin-left: 5px; } 
+.fim{ font-size: 50px; background-color: gold; font-weight: bold; width: 75%; min-height: 650px; text-align: center; margin: auto; flex-direction: column; align-items: center; justify-content: center; border-radius: 10px;  display: none; }
+
+/* ================= RESPONSIVIDADE ================= */
+@media (max-width: 1080px) {
+    header {
+        margin-bottom: 40px;
+    }
+
+    header h1 { 
+        font-size: 25px; 
+    }
+
+    .pae { 
+        grid-template-columns: 2fr; /*cards por linhas*/
+        gap: 6px; 
+        font-size: 18px; 
+        padding: 7px; 
+        margin-bottom: 6px; 
+    }
+
+    .card { 
+        width: 100%;        /* 👈 deixa o grid controlar */
+        height: auto;       /* 👈 cresce conforme conteúdo */
+        min-height: 420px;
+        border-radius: 10px; 
+        margin-top: 15px;
+    }
+
+    .inicio { 
+        width: 80%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .prim { 
+        margin-bottom: 7px; 
+    }
+
+    .pergunta { 
+        font-size: 18px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px; 
+        border-radius: 7px; 
+    }
+
+    .btn_resposta { 
+        font-size: 16px;      /* 👈 texto maior */
+        padding: 14px;        /* 👈 botão mais alto */
+        margin-top: 10px;
+        width: 95%;
+    }
+
+    .fim { 
+        font-size: 30px; 
+        width: 70%; 
+        min-height: 400px; 
+    }
+
+    .trofeu { 
+        width: 150px; 
+        height: 200px; 
+    }
+
+    img { 
+        height: 180px; 
+        width: 130px; 
+        margin-top: -5px; 
+    }
+
+    #progresso {  
+        font-size: 17px;
+        margin-left: 0;
+        margin-top: 3px; 
+        width: 100%;
+        text-align: center;
+    }
+
+    .confete { 
+        width: 6px; 
+        height: 6px; 
+        border-radius: 25%; 
+    }
+
+    #recomecar { 
+        margin-top: 5px; 
+        padding: 7px 15px; 
+        font-size: 15px;
+        margin-bottom: 10px; 
+        border: 5px solid black; 
+        border-radius: 10px; 
+    }
+
+    .prox { 
+        margin: 10px auto; 
+        padding: 6px 11px; 
+    }
+
+    .prox1 { 
+        margin: 11px auto; 
+    }
+    
+    .cbc { 
+        font-size: 17px; 
+        margin-bottom: 10px; 
+        width: 90%;
+        margin: 10px auto;
+    }
+    
+    #timer { 
+        text-align: center;
+        margin: 5px auto; 
+    }
+
+    .menu{
+        margin-top: 5px; 
+        padding: 7px 15px; 
+        font-size: 15px; 
+        margin-bottom: 10px; 
+        border: solid 5px black;
+        border-radius: 10px; 
+    }
+}
